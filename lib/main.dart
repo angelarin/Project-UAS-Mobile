@@ -1,20 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:recipesapp/screens/home_screen.dart';
 
 void main() {
-  runApp(const MainApp());
+  runApp(const App());
 }
 
-class MainApp extends StatelessWidget {
-  const MainApp({super.key});
+class App extends StatelessWidget {
+  const App({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: Text('Hello World!'),
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        fontFamily: 'Poppins',
+        colorScheme: ColorScheme.fromSwatch().copyWith(
+          secondary: Colors.orange,
         ),
       ),
+      home: const HomeSreen(),
     );
   }
 }
